@@ -292,5 +292,252 @@ public class Patterns {
 
        }
    }
+   /*
+            *           //1   for row1
+           ***          //3   for row2
+          *****         //5    for row 3
+         *******        //7    for row 4
+        *********       //9     for row 5
 
+   */
+    public void printTriangle(int n) {
+        for(int row = 1; row <= n; row ++){
+            int spaces = n - row;
+            int cols = 2 * row - 1 ;
+            for(int s = 1; s <= spaces; s++){
+                System.out.print(" ");
+            }
+            for(int col = 1; col <= cols; col++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    /*
+                *********
+                 *******
+                  *****
+                   ***
+                    *
+
+    */
+    void printInvertedTriangle(int n) {
+        for(int row = 1; row <= n; row ++){
+            int spaces = row - 1;
+            int cols =   2  * (n - row) + 1  ;
+            for(int s = 1; s <= spaces; s++){
+                System.out.print(" ");
+            }
+            for(int col = 1; col <= cols; col++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+    /*
+        1
+        0 1
+        1 0 1
+        0 1 0 1
+        1 0 1 0 1
+    */
+    void binaryNumberTriangle(int n) {
+        for(int row = 1 ; row <= n ; row++){
+
+            for(int col = 1; col <= row; col++){
+                if((row + col) % 2 == 0){
+                    System.out.print("1 ");
+                }
+                else
+                {
+                    System.out.print("0 ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+            1                 1
+            1 2             2 1
+            1 2 3         3 2 1
+            1 2 3 4     4 3 2 1
+            1 2 3 4 5 5 4 3 2 1
+
+    */
+    void mPattern(int n) {
+
+        for(int row = 1; row <= n; row++){
+            int k = 1;
+            for(int col = 1; col <= row; col++){
+                System.out.print(k +" ");
+                k++;
+            }
+            int spaces = 2 * (n -  row);
+            for(int s = 1; s <= spaces; s++){
+                System.out.print("  ");
+            }
+            for(int col = 1; col <= row; col++){
+                k--;
+                System.out.print(k +" ");
+
+            }
+            System.out.println();
+        }
+    }
+    void charTriangle(int n) {
+        for(int row = 1; row <= n; row++){
+            char ch = 'A';
+            for(int col = 1; col <= row; col++){
+                System.out.print(ch);
+                ch++;
+            }
+            System.out.println();
+        }
+    }
+    /*
+        ABCDE
+        ABCD
+        ABC
+        AB
+        A
+    */
+    void invertedCharTriangle(int n) {
+        for(int row = 1; row <= n; row++){
+            char ch = 'A';
+            int cols = n - row + 1;
+            for(int col = 1; col <= cols; col++){
+                System.out.print(ch);
+                ch++;
+            }
+            System.out.println();
+        }
+    }
+    /*
+        A
+        BB
+        CCC
+        DDDD
+        EEEEE
+    */
+    void charTrianglePattern(int n) {
+        char ch = 'A';
+        for(int row = 1; row <= n; row++){
+
+            for(int col = 1; col <= row; col++){
+                System.out.print(ch);
+
+            }
+            ch++;
+            System.out.println();
+        }
+    }
+    /*
+            A
+           ABA
+          ABCBA
+         ABCDCBA
+    */
+    void charEquiTriangle(int n) {
+        for(int row = 1; row <= n; row++){
+            char ch = 'A';
+            int spaces = n - row;
+            int cols = 2 * row -1;
+            for(int s = 1; s <= spaces; s++){
+                System.out.print(" ");
+            }
+            for(int col = 1; col <= cols; col++){
+                System.out.print(ch);
+                if(col >= row)
+                    ch--;
+                else
+                    ch++;
+            }
+            ch++;
+            System.out.println();
+        }
+    }
+
+    /*
+            E
+            E D
+            E D C
+            E D C B
+            E D C B A
+    */
+    void printCharTriangle(int n) {
+        for(int row = 1; row <= n; row++){
+            char ch = (char) (n+'A'-1);
+            for(int col = 1; col <= row; col++){
+                System.out.print(ch + " ");
+                ch--;
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+                     **********
+                     ****  ****
+                     ***    ***
+                     **      **
+                     *        *
+                     *        *
+                     **      **
+                     ***    ***
+                     ****  ****
+                     **********
+    */
+    void printTrianglePattern2(int n) {
+        int spaces  = 0;
+        for(int row = 1; row <= 2 * n; row++){
+
+            int cols = row <= n ? n - row +1 : row-n ;
+            for(int col = 1; col <= cols; col++){
+                System.out.print("*");
+            }
+
+            for(int s = 1; s <= spaces; s++){
+                System.out.print(" ");
+
+            }
+            spaces= row < n ? spaces+2 : (row == n ? spaces : spaces-2);
+            for(int col = 1; col <= cols; col++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    /*
+                 *        *
+                 **      **
+                 ***    ***
+                 ****  ****
+                 **********
+                 ****  ****
+                 ***    ***
+                 **      **
+                 *        *
+    */
+    void printStarPattern(int n) {
+        for(int row = 1; row <= 2 * n - 1 ; row++){
+
+            int cols = row <= n ? row : 2*n-row   ;
+            for(int col = 1; col <= cols; col++){
+                System.out.print("*");
+            }
+            int spaces = row <= n ? 2 * (n - row) : 2 * (row - n);
+
+            for(int s = 1; s <= spaces; s++){
+                System.out.print(" ");
+
+            }
+            for(int col = 1; col <= cols; col++){
+                System.out.print("*");
+            }
+            System.out.println();
+
+        }
+    }
 }

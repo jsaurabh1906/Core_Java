@@ -24,7 +24,11 @@ public class Main {
         //p.numberTrianglePattern(num);
         //p.numberTrianglePattern2(num);
         //p.numberDiamondPattern(num);
-        p.numberDiamondPattern2(num);
+        //p.numberDiamondPattern2(num);
+        //p.printTriangle(num);
+        //p.printInvertedTriangle(num);
+        //p.printTrianglePattern2(num);
+        p.printStarPattern(num);
 
     }
 }
