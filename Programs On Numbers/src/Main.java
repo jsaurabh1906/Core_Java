@@ -7,8 +7,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number1: ");
         int num1 = sc.nextInt();
-        System.out.println("Enter the number2: ");
-        int num2 = sc.nextInt();
+        //System.out.println("Enter the number2: ");
+        //int num2 = sc.nextInt();
         NumberOperations op= new NumberOperations();
         //op.findEvenOdd(num);
        //op.swapNumbers(num1,num2);
@@ -28,9 +28,10 @@ public class Main {
         //op.isStrongNumber(num1);
         //op.fibonacciSeries(num1);
         //op.reverseNumber(num1);
-        int gcd = op.findGCD(num1,num2);
-        System.out.println("gcd: " + gcd);
-
+       /* int gcd = op.findGCD(num1,num2);
+        System.out.println("gcd: " + gcd);*/
+        //System.out.println(op.digitCount(num1));
+        op.isArmstrong(num1);
 
     }
 }

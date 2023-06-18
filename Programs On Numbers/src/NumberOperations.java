@@ -180,4 +180,46 @@ public class NumberOperations {
             return num1;
         return findGCD(num2 , num1 % num2);
     }
+    /*
+        An	Armstrong number is	an integer such	that the sum of	the	power of its
+        digits is equal	to the number itself.
+        For	example,	371	is	an	Armstrong number since 3**3	+ 7**3 + 1**3	=	371.
+		9 is an	Armstrong number since 9*1=	9
+    */
+    public void isArmstrong(int num){
+        int originalNum = num;     //371
+        int digits= digitCount(num);  //3
+        int totalSum=0;                 //0
+        while(num != 0){
+           int k = num % 10;            //k= 1
+           totalSum += pow(k,digits);   //totalSum = 0 + pow(1,3) ===> 0+1 = 1
+           num /= 10;
+        }
+        if (originalNum == totalSum){
+            System.out.println("The given number "+ originalNum+ " is an Armstrong Number");
+        }
+        else {
+            System.out.println("The given number "+ originalNum+ " is not an Armstrong Number");
+        }
+
+    }
+
+    private int pow(int k, int digits) {  //k=1 digits=3
+        int pw=1;                           //pw=1
+        while(digits > 0){
+            pw = pw * k ;               //pw = 1 * 1
+            digits--;
+        }
+        return pw;
+    }
+
+    private int digitCount(int num) {
+        int count = 0;
+        while(num != 0){
+            count++;
+            num = num / 10;
+
+        }
+        return count;
+    }
 }
