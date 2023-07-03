@@ -11,7 +11,6 @@ public class SortingMethods {
                     arr[j + 1] = temp;
                 }
             }
-
         }
         printArray(arr);
     }
@@ -59,5 +58,4 @@ public class SortingMethods {
         }
         System.out.println();
     }
-
 }
