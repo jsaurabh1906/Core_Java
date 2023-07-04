@@ -6,7 +6,8 @@ public class Main {
         SortingMethods sort = new SortingMethods();
         //sort.bubbleSort(arr);
         //sort.selectionSort(arr);
-        sort.insertionSort(arr);
-
+        //sort.insertionSort(arr);
+        //sort.mergedSort(arr);
+        sort.quickSort(arr);
     }
 }
