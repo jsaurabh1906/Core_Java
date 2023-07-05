@@ -100,7 +100,39 @@ public class LinkedListDemo {
     public int getSize(){
         return size;
     }
+    //reverse a ll
+    public void reverseLL(){
+        if(head == null || head.next == null){
+            return;
+        }
+        Node prevNode = head;
+        Node currNode = head.next;
 
+        while(currNode != null){
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
+
+            //update the pointers
+            prevNode = currNode;
+            currNode = nextNode;
+        }
+        head.next = null;
+        head = prevNode ;
+    }
+
+    //reverse a ll using recursion
+    public Node reverseLLRecur(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        Node newHead = reverseLLRecur(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+
+    }
 
 
     public static void main(String[] args) {
@@ -122,5 +154,9 @@ public class LinkedListDemo {
 
         System.out.println(list.getSize()); //2
 
+        list.printList();
+        //list.reverseLL();
+        list.head = list.reverseLLRecur(list.head);
+        list.printList();
     }
 }
