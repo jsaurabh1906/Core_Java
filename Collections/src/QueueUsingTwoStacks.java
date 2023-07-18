@@ -32,7 +32,7 @@ public class QueueUsingTwoStacks {
             return st1.peek();
         }
     }
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Queue.add(10);
         Queue.add(20);
         Queue.add(30);
