@@ -40,6 +40,10 @@ public class Main {
         String str5 = "23";
         recur.printCombinations(str5,0,"");
 
+        //Power of a number
+        double x = 2.0000;
+        int n =10;
+        System.out.println(recur.myPow(x,n));;
 
     }
 }

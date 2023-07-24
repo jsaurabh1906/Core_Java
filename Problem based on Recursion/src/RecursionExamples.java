@@ -145,7 +145,27 @@ public class RecursionExamples {
         }
     }
 
+    // Power of a number
+    public double myPow(double x, int n) {
 
+        return power(x,n);
+    }
+    private double power(double x, int n){
+        if(x == 0 ) return 0;
+        if(n == 0) return 1;
+
+        double result = power(x, n/2);
+        result = result * result;
+
+        if(n % 2 != 0){
+            if(n > 0){
+                return result * x;
+            }
+            else return result / x;
+        }
+        else
+            return result;
+    }
 
 
 }
