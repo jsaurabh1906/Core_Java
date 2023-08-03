@@ -1,13 +1,19 @@
+import java.util.Arrays;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
         int arr[] = {70 , 58, 11, 93, 22, 8, 1, 99, 5};
+
         SortingMethods sort = new SortingMethods();
         //sort.bubbleSort(arr);
         //sort.selectionSort(arr);
         //sort.insertionSort(arr);
         //sort.mergedSort(arr);
-        sort.quickSort(arr);
+        //sort.quickSort(arr);
+        int carr[] = {5,1,3,4,2};
+        sort.cyclicSort(carr);
+        System.out.println(Arrays.toString(carr));
     }
 }
